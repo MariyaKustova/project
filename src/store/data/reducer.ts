@@ -1,0 +1,18 @@
+import { IRegion } from "../../models/IRegion";
+import { DataAction, IDataActionTypes } from "./types";
+
+const initialState = {
+    regions: null as Array<IRegion> | null,
+}
+
+type IDataState = typeof initialState;
+
+export const dataReducer = (
+    state = initialState,
+    action: DataAction
+): IDataState => {
+    switch (action.type) {
+        case IDataActionTypes.DATA__SET_REGIONS:
+            return { ...state, regions: action.payload };
+    }
+}

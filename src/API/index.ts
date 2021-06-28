@@ -1,13 +1,18 @@
 import axios, { AxiosInstance } from "axios";
-import {ApiRegions} from "../API/regions";
-
+import { ApiRegions } from "./regions";
+import { ApiVacancies } from "./vacancies";
+import {ApiSummaries} from "./summaries";
 
 class Api {
   private axios: AxiosInstance;
   regions: ApiRegions;
+  vacancies: ApiVacancies;
+  summaries: ApiSummaries;
   constructor(axios: AxiosInstance) {
     this.axios = axios;
     this.regions = new ApiRegions(axios);
+    this.vacancies = new ApiVacancies(axios);
+    this.summaries = new ApiSummaries(axios);
   }
 }
 //главный объект для запросов
@@ -16,7 +21,7 @@ const createAPI = (headers = {}) => {
   API = new Api(
     axios.create({
       withCredentials: false,
-      baseURL: "https://jsonplaceholder.typicode.com",
+      baseURL: "http://localhost:3000",
       headers,
       // headers: {
       //   //  "Authorization": "API_KEY"

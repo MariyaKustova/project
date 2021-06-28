@@ -1,4 +1,5 @@
-import { AppAction, IAppActionTypes } from "./types";
+import { IAppActionTypes } from "./types";
+import { AppAction } from "./actions";
 
 const initialState = {
   initApp: false,

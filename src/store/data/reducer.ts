@@ -1,8 +1,10 @@
 import { IRegion } from "../../models/IRegion";
+import { IVacancy } from "../../models/IVacancy";
 import { DataAction, IDataActionTypes } from "./types";
 
 const initialState = {
     regions: null as Array<IRegion> | null,
+    vacancies: null as Array<IVacancy> | null,
 }
 
 type IDataState = typeof initialState;
@@ -14,5 +16,9 @@ export const dataReducer = (
     switch (action.type) {
         case IDataActionTypes.DATA__SET_REGIONS:
             return { ...state, regions: action.payload };
+        case IDataActionTypes.DATA__SET_VACANCIES:
+            return { ...state, vacancies: action.payload };
+        default:
+            return state;
     }
 }

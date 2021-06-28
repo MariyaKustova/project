@@ -11,6 +11,7 @@ export class ApiRegions {
   }
   getAll = () =>
     this.axios
-      .get<IRegionsResponse>("")
-      .then((response) =>  response.data);
+      .get<IRegionsResponse>(`/regions`)
+      .then((response) => {
+        return response.data});
 }

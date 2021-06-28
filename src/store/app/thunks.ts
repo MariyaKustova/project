@@ -1,5 +1,5 @@
 import { GetState } from "../index";
-import {IAppActionTypes} from "./types";
+import { IAppActionTypes } from "./types";
 import { data__getRegions } from "../data/thunks";
 
 

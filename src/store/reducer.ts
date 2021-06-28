@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { appReducer } from "./app/reducer";
-//import { dataReducer } from "./data/reducer";
+import { dataReducer } from "./data/reducer";
 
 export enum StoreSection {
   app = "app",
@@ -9,7 +9,7 @@ export enum StoreSection {
 
 export const rootReducer = combineReducers({
   [StoreSection.app]: appReducer,
-  //[StoreSection.data]: dataReducer,
+  [StoreSection.data]: dataReducer,
 });
 
 export type IRootState = ReturnType<typeof rootReducer>;
